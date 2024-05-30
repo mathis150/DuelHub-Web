@@ -113,8 +113,13 @@ a.active {
     .nav-burger {
         display: block;
     }
+    .nav-links {
+        display: none;
+    }
     .nav-links--open {
         position: absolute;
+
+        display: block !important;
 
         top: 0;
         right: 0;
