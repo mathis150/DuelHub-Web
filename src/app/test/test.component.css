@@ -1,6 +1,7 @@
 nav {
     display: grid;
     grid-template-columns: 240px auto 240px;
+    grid-template-areas: "icon links user";
 
     height: 60px;
     width: 100%;
@@ -12,6 +13,16 @@ nav {
 
     position: sticky;
     top: 0;
+}
+
+.nav-icon {
+    grid-area: icon;
+}
+.nav-links {
+    grid-area: links;
+}
+.nav-user {
+    grid-area: user;
 }
 
 .img-presentation {
@@ -41,6 +52,7 @@ nav {
 ul.nav-list {
     list-style: none;
     display: flex;
+    padding-inline-start: 0;
 }
 a.nav-link {
     text-decoration: none;
@@ -67,5 +79,84 @@ a.active {
     margin: 0px 15px;
 }
 .nav-burger {
-    display: block;
+    display: none;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 5px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 40px;
+}
+.nav-close {
+    display: none;
+}
+
+@media screen and (max-width: 1101px) {
+    .img-presentation {
+        display: none;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "icon user";
+
+        overflow: visible;
+    }
+    .nav-connect {
+        display: none;
+    }
+    .nav-burger {
+        display: block;
+    }
+    .nav-links--open {
+        position: absolute;
+
+        top: 0;
+        right: 0;
+
+        width: 60%;
+        height: 100vh;
+        background: #51404F;
+
+        justify-content: start;
+        align-items: start;
+        
+        flex-direction: column;
+
+        -webkit-box-shadow: -4px 0px 25px 5px rgba(0,0,0,0.52); 
+        box-shadow: -4px 0px 25px 5px rgba(0,0,0,0.52);
+    }
+    ul.nav-list {
+        display: block !important;
+        width: 100%;
+    }
+    a.nav-link {
+        display: block;
+        padding: 20px 15px;
+        margin: 0;
+        width: calc(100% - 30px);
+    }
+    .nav-close {
+        display: flex;
+        justify-content: end;
+
+        width: 100%;
+    }
+    .nav-close--button {
+        width: 60px;
+        height: 50px;
+
+        margin: 5px;
+
+        background: none;
+        border: none;
+
+        color: white;
+        font-size: 40px;
+    }
 }

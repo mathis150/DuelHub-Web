@@ -8,7 +8,10 @@
         <img src="../../assets/imgs/chart/banner_basic_2.png" class="nav-icon--monitor">
         <img src="../../assets/imgs/chart/logo_basic_2.png" class="nav-icon--mobile">
     </div>
-    <div class="nav-links">
+    <div class="nav-links" [class.nav-links--open]="show_navbar">
+        <div class="nav-close">
+            <button (click)="mobileNavBar()" class="nav-close--button"><fa-icon [icon]="faX"></fa-icon></button>
+        </div>
         <ul class="nav-list">
             <li><a href="./" class="nav-link active">Accueil</a></li>
             <li><a href="./forum" class="nav-link">Communauté</a></li>
@@ -17,7 +20,7 @@
     </div>
     <div class="nav-user">
         <a href="./login" class="nav-connect">Connexion</a>
-        <button class="nav-burger"><fa-icon [icon]="faBars"></fa-icon></button>
+        <button class="nav-burger" (click)="mobileNavBar()"><fa-icon [icon]="faBars"></fa-icon></button>
     </div>
 </nav>
 <!--END NAVBAR-->
