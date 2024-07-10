@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faBook, faUsersLine } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-test',
@@ -12,6 +12,9 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 export class TestComponent {
   faBars = faBars;
   faX = faXmark;
+  faBook = faBook;
+  faUsersLine = faUsersLine;
+
   show_navbar = false;
 
   mobileNavBar() {
