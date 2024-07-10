@@ -14,9 +14,9 @@
         </div>
         <ul class="nav-list">
             <li><a href="./login" class="nav-link-mobile">Connexion</a></li>
-            <li><a href="./" class="nav-link active">Accueil</a></li>
-            <li><a href="./forum" class="nav-link">Communauté</a></li>
-            <li><a href="./wiki" class="nav-link">Wiki</a></li>
+            <li><a href="./" class="nav-link" [class.active]="page == '/'">Accueil</a></li>
+            <li><a href="./forum" class="nav-link" [class.active]="page == '/forum'">Communauté</a></li>
+            <li><a href="./wiki" class="nav-link" [class.active]="page == '/wiki'">Wiki</a></li>
         </ul>
     </div>
     <div class="nav-user">

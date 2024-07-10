@@ -16,6 +16,8 @@ export class HeaderComponent {
   is_home = false;
   show_navbar = false;
 
+  page = window.location.pathname;
+
   constructor() {
     if(window.location.pathname == '/') {
       this.is_home = true;
