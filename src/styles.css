@@ -48,6 +48,23 @@ h6 {
     margin: 20px 0;
 }
 
+a, a:link, a:visited {
+    color: #CA242A;
+    text-decoration: none;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel], input[type=date], input[type=time], input[type=datetime-local], input[type=month], input[type=week], input[type=search], input[type=url], input[type=color]{
+    width: 100%;
+
+    padding: 20px;
+
+    border-radius: 15px;
+    border: none;
+
+    -webkit-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.25); 
+    box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.25);
+}
+
 nav {
     display: grid;
     grid-template-columns: 240px auto 240px;
@@ -132,6 +149,9 @@ a.active {
     padding: 20px;
     margin: 0px 15px;
 }
+.nav-connect:visited, .nav-connect:link {
+    color: white;
+}
 .nav-burger {
     display: none;
 
@@ -201,9 +221,13 @@ footer {
 }
 
 .btn-full {
-    padding: 10px 30px;
+    padding: 15px 40px;
     border-radius: 15px;
     border: none;
+
+    font-size: 16px;
+
+    margin-top: 20px;
 }
 
 .btn--primary {
@@ -214,6 +238,10 @@ footer {
 .btn--primary:hover {
     background: #ae9d68;
     border-color: #ae9d68;
+}
+
+.btn-full {
+    cursor: pointer;
 }
 
 .btn-full .btn--primary {
@@ -313,6 +341,13 @@ a, a:link {
     align-items: center;
 }
 
+.forum-container {
+    display: grid;
+    grid-template-columns: calc(100% - 240px) 340px;
+
+    overflow-x: hidden;
+}
+
 @media screen and (max-width: 1100px) {
     .img-presentation {
         display: none;
@@ -399,6 +434,9 @@ a, a:link {
     .market-img {
         display: none;
     }
+    .forum-container {
+        display: block;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -417,4 +455,103 @@ a, a:link {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #96358b; 
+}
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect-container {
+    width: 400px;
+    margin: 40px 0;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: #31252F;
+
+    border-radius: 15px;
+}
+.connect-title {
+    width: 100%;
+    text-align: left;
+}
+.connect-title--bottom {
+    width: 80px;
+    height: 4px;
+    background-color: #CA242A;
+
+    margin-top: -8px;
+}
+.connection-options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 12px;
+
+    margin-top: 25px;
+}
+
+.check--container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 25px;
+}
+
+.check--container input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: -3px;
+    right: -25px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+
+    border-radius: 5px;
+
+    -webkit-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.25); 
+    box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.25);
+}
+
+.check--container:hover input[type=checkbox] ~ .checkmark {
+    background-color: #FFF;
+}
+
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check--container input[type=checkbox]:checked ~ .checkmark:after {
+    display: block;
+}
+
+.check--container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 7px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.check--container > p {
+    margin: 0;
 }
