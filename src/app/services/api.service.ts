@@ -1,26 +1,35 @@
 import { Injectable } from '@angular/core';
 
-interface FeaturedGame {
+export interface FeaturedGame {
+  _id: string,
   title: string,
   routing: string,
+  views: number,
+  players: number,
   bannerSRC: string,
+  coverSRC: string,
 }
 
-interface Game {
+export interface Game {
+  _id: string,
   title: string,
   routing: string,
+  views: number,
+  players: number,
   coverSRC: string,
+  bannerSRC: string,
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  public apiServer : string = 'http://10.31.33.46:8000'
+  public apiServer : string = 'http://localhost:5000'
+  public cdnUrl : string = this.apiServer + '/cdn'
 
   constructor() {}
 
-  GetHomePageFeaturedGames(): Promise<FeaturedGame[]> {
+  GetHomePageFeaturedGameList(): Promise<FeaturedGame[]> {
     return fetch(this.apiServer + "/game/featured")
       .then((fetch) => {
         return fetch.json()
@@ -42,6 +51,7 @@ export class ApiService {
         if (games.length == 0) {
           return []
         }
+
         return games;
       })
   }
