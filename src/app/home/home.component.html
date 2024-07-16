@@ -42,70 +42,12 @@
             </p>
         </div>
         <div class="market-games--list">
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
-                </div>
-            </div>
-            <div class="market-games--item">
-                <img src="../../assets/imgs/global/tekken_presentation.png" class="market-games--item--img">
-                <div class="market-games--item--access">
-                    <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
+            <div *ngFor="let game of popularGames">
+                <div class="market-games--item">
+                    <img [src]="_api.cdnUrl + '/' + game.coverSRC" class="market-games--item--img">
+                    <div class="market-games--item--access">
+                        <button class="btn-full btn--primary">Rejoignez-nous maintenant !</button>
+                    </div>
                 </div>
             </div>
         </div>
