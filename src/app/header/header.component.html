@@ -1,0 +1,27 @@
+<!--NAVBAR-->
+<section class="img-presentation" [class.hide]="!is_home">
+    <img [src]="_api.cdnUrl + '/' + featuredGames[0].bannerSRC" class="img-presentation--img" alt="Tekken 7">
+</section>
+
+<nav>
+    <div class="nav-icon">
+        <img src="../../assets/imgs/chart/banner_basic_2.png" class="nav-icon--monitor">
+        <img src="../../assets/imgs/chart/logo_basic_2.png" class="nav-icon--mobile">
+    </div>
+    <div class="nav-links" [class.nav-links--open]="show_navbar">
+        <div class="nav-close">
+            <button (click)="mobileNavBar()" class="nav-close--button"><fa-icon [icon]="faX"></fa-icon></button>
+        </div>
+        <ul class="nav-list">
+            <li><a href="./login" class="nav-link-mobile">Connexion</a></li>
+            <li><a href="./" class="nav-link" [class.active]="page == '/'">Accueil</a></li>
+            <li><a href="./forum" class="nav-link" [class.active]="page == '/forum'">Communauté</a></li>
+            <li><a href="./wiki" class="nav-link" [class.active]="page == '/wiki'">Wiki</a></li>
+        </ul>
+    </div>
+    <div class="nav-user">
+        <a href="./login" class="nav-connect">Connexion</a>
+        <button class="nav-burger" (click)="mobileNavBar()"><fa-icon [icon]="faBars"></fa-icon></button>
+    </div>
+</nav>
+<!--END NAVBAR-->
