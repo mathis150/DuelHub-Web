@@ -416,7 +416,7 @@ a, a:link {
 
     background: #31252F;
 
-    height: 100%;
+    height: auto;
 
     border-radius: 15px;
 }
